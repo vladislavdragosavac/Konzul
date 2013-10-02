@@ -1,0 +1,10 @@
+<nav xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div id="bdm">
+
+        <t:pagelink t:page="index" class="pagelink">Početna</t:pagelink>
+        <t:pagelink t:page="drzava" class="drzava">Države</t:pagelink>
+        <t:pagelink t:page="korisnik" class="korisnik">Korisnici sistema</t:pagelink>
+        <t:pagelink t:page="zahtevDrzavljanstvo" class="pagelink">Citizenship request</t:pagelink>
+
+        </div>
+</nav>

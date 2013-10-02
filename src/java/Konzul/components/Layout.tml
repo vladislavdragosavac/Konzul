@@ -1,0 +1,89 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<head>
+<title>${pagetitle}</title>
+<meta name="description" content="Vizni informacioni sistem Ministarstva spoljnih poslova Republike Srbije"></meta>
+<meta name="keywords" content="veze, vizni, vizni sistem, vizni informacioni sistem"></meta>
+<meta name="author" content="Vladislav Dragosavac"></meta>
+<meta name-equiv="Content-type" CONTENT="text/html; charset=UTF-8"></meta>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+	<div>
+        <div id="sadrzaj">
+
+
+	<header>
+		<div id="logo" class="vrh-bg">
+
+                <center>${message:naslov}</center>
+                <center>${message:naslov2}</center>
+                </div>
+
+	</header>
+
+                <t:if t:test="asoKorisnikExists">
+                <div style="float:right">
+                  Dobrodošli: <strong>${asoKorisnik.korisnikIme}</strong> -
+                    <t:actionlink t:id="logout">Odjavi se</t:actionlink>
+                </div>
+                <t:parameter t:name="else">
+                <center>
+                    <h4><t:loop source="supportedLocales" value="supportedLocale" index="var:index">
+                    <t:if test="var:index">, </t:if>
+                    <a href="#" t:type="eventlink" t:event="switchLocale" t:context="supportedLocale.toString()">${supportedLocale.getDisplayName()}</a>
+                    </t:loop></h4>.<br/><br/>
+                </center>
+                </t:parameter>
+                </t:if>
+        <br></br>
+    	
+
+        	<aside>
+
+		<div id="body">
+                <t:if t:test="admin">
+                    <t:Navadmin></t:Navadmin>
+                    <t:parameter t:name="else">
+                        <t:if t:test="konzul">
+                            <t:Navigation></t:Navigation>
+                            <t:parameter t:name="else">
+                                <t:Navigation></t:Navigation>
+                    
+                            </t:parameter>
+                        </t:if>
+
+                    </t:parameter>
+                </t:if>
+
+
+
+                </div>
+
+        
+	</aside>
+
+
+
+        <article>
+
+                <t:body />
+        </article>
+
+	</div>
+	<footer>
+
+
+	<div id="footer">
+		<div style="float:left;">Copyright 2013 - <a href="mailto:dr_vlada@hotmail.com"> Vladislav Dragosavac</a> </div>
+        </div>
+
+	</footer>
+</div>
+
+</html>
+
+
+
