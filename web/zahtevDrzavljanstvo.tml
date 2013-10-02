@@ -1,0 +1,52 @@
+<t:layout t:pageTitle="${message:title}"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+
+        <aside id="desnastrana">
+           <div class="left">
+
+            	<h1>${message:naslov}</h1>
+
+                <h2>${message:podnaslov1}</h2>
+ 
+                <h4><t:zone t:id="forma" id="forma">
+                <div class="srednjaForma">
+              
+                <t:beaneditform t:id="zahtev"  zone="formZone" submitlabel="message:create" add="drzavaRodjenja,drzavaIseljenja,stranoDrzavljanstvo,status,licnistatus" exclude="zahtevId">
+                    <t:parameter name="drzavaRodjenja">
+                        <t:label for="drzavaRodjenja"/>
+                        <t:selectObject t:id="drzavaRodjenja" list="drzavaList" value="zahtev.zahtevDrzavaRodjenjaId" blankOption="never" labelField="literal:drzavaNaziv"/>
+                    </t:parameter>
+                    <t:parameter name="drzavaIseljenja">
+                        <t:label for="drzavaIseljenja"/>
+                        <t:selectObject t:id="drzavaIseljenja" list="drzavaList" value="zahtev.zahtevDrzavaIseljenjaId" blankOption="never" labelField="literal:drzavaNaziv"/>
+                    </t:parameter>
+                    <t:parameter name="stranoDrzavljanstvo">
+                        <t:label for="stranoDrzavljanstvo"/>
+                        <t:selectObject t:id="stranoDrzavljanstvo" list="drzavaList" value="zahtev.zahtevStranoDrzavljanstvoId" blankOption="never" labelField="literal:drzavaNaziv"/>
+                    </t:parameter>
+                    <t:parameter name="status">
+                        <t:label for="status"/>
+                        <t:selectObject t:id="status" list="statusList" value="zahtev.zahtevStatusId" blankOption="never" labelField="literal:statusOpis"/>
+                    </t:parameter>
+                    <t:parameter name="licnistatus">
+                        <t:label for="licnistatus"/>
+                        <t:selectObject t:id="licnistatus" list="licniStatusList" value="zahtev.zahtevLicniStatusId" blankOption="never" labelField="literal:licniStatusOpis"/>
+                    </t:parameter>
+                </t:beaneditform>
+ 
+                </div>
+ 
+                </t:zone><br/></h4>
+
+		<t:zone t:id="formZone" id="formZone">
+
+                <h1>${info}</h1>
+
+	 	</t:zone>
+
+          </div>
+     </aside>
+
+
+</t:layout>

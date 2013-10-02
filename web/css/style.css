@@ -1,0 +1,187 @@
+/* CSS Vladislav Dragosavac IT849/2009 */
+
+
+.vrh-bg
+{
+
+background-image:url(../slike/pozadina.jpg);
+background-repeat:no-repeat;
+height:100px;
+}
+
+.center
+{
+    margin-left:auto;
+    margin-right: auto;
+    width:60%;
+}
+.srednjaForma
+{
+   float: inherit;
+   
+   width: 750px;
+ 
+}
+.left
+{
+   float: left;
+   width: 80%;
+}
+#logo
+{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:24px;
+color:#a1c5e7;
+text-decoration:none;outline:none;
+text-align:left;outline:none;
+}
+
+#sadrzaj {
+	width: 99%;
+	margin: 0px auto;
+	background: #fff;
+	padding: 0px;
+	overflow: hidden;
+}
+
+#main-navigation {
+	border-bottom: 0px;
+	float:left;
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:4px;
+	margin-right:5px;
+	letter-spacing: 0.8cm;
+
+}
+
+#footer {
+	positon:relative;
+	background-color: #a1c5e7;
+	background-repeat:repeat-x;
+	height:34px;
+	margin: 20px auto;
+        	width: 99%;
+	text-align: justify;
+}
+
+article {
+
+	overflow: hidden;
+        height:auto;
+
+}
+
+section {
+	float: right;
+        height:auto;
+}
+
+aside {
+	float: left;
+        height:auto;
+}			
+			
+footer {
+	
+	width: 100%;
+	margin: 20px auto;
+	font-size: 1.4em;
+	text-align: justify;
+}
+
+body {
+    	width: auto;
+	 background: #fff;
+
+}
+
+h1 {
+	font-weight: normal;
+	color:#dc0f18;
+	font: 2.8em/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0.2em 0 0;
+}
+
+h2 {
+	font-weight: normal;
+	color:#475258;
+	font: 2.0em/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0.2em 0;	
+}
+
+h3 {
+	font-weight: normal;
+	color:#000000;
+	font: 2.0em/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0.2em 0;
+}
+
+h4 {
+	font-weight: normal;
+	color:#475258;
+	font: 1.4em/1.0 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0.2em 0;
+}
+
+section p, section ol, aside p, aside ol {
+	font-size: 1.4em;
+	margin: 1em 0;
+}
+
+section ol {
+	margin-left: 1.4em;
+}
+
+body, select, input, textarea {
+	font: 0.625em/1.4 Verdana, Arial, Helvetica, sans-serif;
+	color: #6c707c;
+}
+
+body{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #6c707c;
+    background: #DDDDDD;
+}
+
+#bdm {
+    float: left;
+    width: 100px;
+
+    margin: 0 auto;
+    padding: 0 10px 10px 10px;
+    height:auto;
+}
+
+#bdm ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: normal;
+    vertical-align:bottom;
+}
+
+#bdm li {
+    display: inline;
+    margin-left:10px;
+    padding: 0;
+}
+
+#bdm a {
+    display: block;
+    float: left;
+    width: 100px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 0px solid #9cbb36;
+    text-decoration: none;
+    text-align: center;
+
+    font-size: 136%;
+    color: #9cbb36;
+}
+
+#bdm a:hover{
+    background: #9cbb36;
+    color:#FFFFFF;
+}

@@ -1,0 +1,40 @@
+<t:layout t:pageTitle="${message:title}"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+        <aside id="desnastrana">
+           <div class="left">
+
+            	<h1>${message:naslov}</h1>
+                <h2>${message:podnaslov1}</h2>
+
+                <h3><t:zone t:id="forma">
+               <div class="srednjaForma">
+                <t:beaneditform t:id="drzava" submitlabel="message:create">
+
+                </t:beaneditform>
+                </div>
+                </t:zone><br/></h3>
+
+
+                <h2>${message:podnaslov2}</h2>
+                <p></p>
+
+                <p><t:zone t:id="lista">
+                <t:form>
+                <t:grid source="drzave" row="drzavaGrid" add="delete" rowsPerPage="20">
+                    <t:parameter name="drzavaNazivCell">
+                        <t:actionlink t:id="drz" context="drzavaGrid.drzavaNaziv">${drzavaGrid.drzavaNaziv}</t:actionlink>
+                    </t:parameter>
+
+                    <t:parameter name="deleteCell">
+                        <t:actionlink t:id="delete" context="drzavaGrid.drzavaNaziv">${message:delete}</t:actionlink>
+                    </t:parameter>
+                </t:grid>
+                </t:form>
+                </t:zone></p>
+
+          </div>
+      </aside>
+
+</t:layout>
+

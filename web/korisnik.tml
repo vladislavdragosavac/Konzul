@@ -1,0 +1,44 @@
+<t:layout t:pageTitle="${message:title}"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+        <aside id="desnastrana">
+           <div class="left">
+
+            	<h1>${message:naslov}</h1>
+                <h2>${message:podnaslov1}</h2>
+
+                <h3><t:zone t:id="forma">
+               <div class="srednjaForma">
+                <t:beaneditform t:id="korisnik"  submitlabel="message:create">
+                    <t:parameter name="korisnikLozinka">
+                        <t:label for="korisnikLozinka"/>
+                        <t:passwordfield t:id="korisnikLozinka" t:value="korisnik.korisnikLozinka" size="20">${korisnik.korisnikLozinka}</t:passwordfield>
+                        </t:parameter>
+
+                </t:beaneditform>
+                </div>
+                </t:zone><br/></h3>
+
+
+                <h2>${message:podnaslov2}</h2>
+                <p></p>
+
+                <p><t:zone t:id="lista">
+                <t:form>
+                <t:grid source="korisnici" row="korisnikGrid" exclude="korisnikLozinka" add="delete" rowsPerPage="20">
+                    <t:parameter name="korisnikPristupnoImeCell">
+                        <t:actionlink t:id="kor" context="korisnikGrid.korisnikPristupnoIme">${korisnikGrid.korisnikPristupnoIme}</t:actionlink>
+                    </t:parameter>
+
+                    <t:parameter name="deleteCell">
+                        <t:actionlink t:id="delete" context="korisnikGrid.korisnikPristupnoIme">${message:delete}</t:actionlink>
+                    </t:parameter>
+                </t:grid>
+                </t:form>
+                </t:zone></p>
+
+          </div>
+      </aside>
+
+</t:layout>
+

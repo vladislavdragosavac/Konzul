@@ -1,0 +1,32 @@
+<t:layout t:pageTitle="${message:title}"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+    	<article id="article">
+
+        	<aside id="desnastrana">
+            	<h1>${message:naslov}</h1>
+                <h4>${message:text}</h4>
+                <br/>
+                <p><h3>
+                        <t:beaneditform t:id="login" exclude="korisnikRola,korisnikIme,korisnikPrezime" submitlabel="message:create">
+                        <t:parameter name="korisnikLozinka">
+                        <t:label for="korisnikLozinka"/>
+                        <t:passwordfield t:id="korisnikLozinka" t:value="login.korisnikLozinka" size="20">${login?.korisnikLozinka}</t:passwordfield>
+                        </t:parameter>
+                        </t:beaneditform>
+
+
+                </h3></p>
+
+ 			<img src="slike/login.jpg" width="180" height="120"/>
+		<t:zone t:id="formZone" id="formZone">
+
+
+
+	 	</t:zone>
+        	</aside>
+
+    	</article>
+
+</t:layout>
+	
