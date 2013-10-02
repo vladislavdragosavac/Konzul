@@ -19,9 +19,14 @@ package Konzul.pages;
 
 import Konzul.entities.Drzava;
 import Konzul.entities.Korisnik;
+import Konzul.entities.Licnistatus;
+import Konzul.entities.Status;
+import Konzul.entities.TipKorisnika;
 import Konzul.entities.Zahtev;
 import Konzul.services.ProtectedPage;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.tapestry5.annotations.ApplicationState;
 import org.apache.tapestry5.annotations.InjectComponent;
@@ -57,6 +62,8 @@ public class zahtevDrzavljanstvo {
     @ApplicationState
     @Property
     private Korisnik asoKorisnik;
+    @Property
+    private boolean asoKorisnikExists;
     @InjectComponent
     private Zone forma;
     @ApplicationState
@@ -82,6 +89,7 @@ public class zahtevDrzavljanstvo {
             zah.setZahtevIme(zahtev.getZahtevIme());
             zah.setZahtevImeMajke(zahtev.getZahtevImeMajke());
             zah.setZahtevImeOca(zahtev.getZahtevImeOca());
+            zah.setZahtevPrezime(zahtev.getZahtevPrezime());
             zah.setZahtevBracniDrug(zahtev.getZahtevBracniDrug());
             zah.setZahtevDatumRodjenja(zahtev.getZahtevDatumRodjenja());
             zah.setZahtevDevojackoPrezimeMajke(zahtev.getZahtevDevojackoPrezimeMajke());
@@ -99,16 +107,32 @@ public class zahtevDrzavljanstvo {
             zah.setZahtevVO(zahtev.getZahtevVO());
             zah.setZahtevZanimanje(zahtev.getZahtevZanimanje());
             zah.setZahtevZaposlenje(zahtev.getZahtevZaposlenje());
-                    
-        
+
+            
+            if (asoKorisnikExists){
+                      zah.setZahtevKorisnikId(asoKorisnik);
+            }            
+            else
+            {
+ 
+                List listaRezultata = hibernate.createCriteria(Korisnik.class)
+                .add(Restrictions.eq("korisnikRola",TipKorisnika.USER))
+                .list();
+                if(listaRezultata.size() > 0){
+                Korisnik temp = (Korisnik) listaRezultata.get(0);
+                zah.setZahtevKorisnikId(temp);
+            }}
+                      
+     
             hibernate.save(zah);
 
         zahtev = new Zahtev();
         info= "Postovani, " +zah.getZahtevPrezime() + ", podneli ste zahtev pod brojem: "+zah.getZahtevId()+", uz ovaj broj i vaše prezime u svakom trenutku možete proveriti status vaseg zahteva u postupku obrade.";
         zah=new Zahtev();
+        
         return formZone;
     }
-
+ 
     /**
      * metoda getDrzavaList vraca listu drzava
      * @return
@@ -117,8 +141,16 @@ public class zahtevDrzavljanstvo {
         return hibernate.createCriteria(Drzava.class).list();
     }
 
-
-
+    /**
+     * metoda getStatusList vraca listu statusa
+     * @return
+     */
+    public List<Status> getStatusList() {
+        return hibernate.createCriteria(Status.class).list();
+    }
+    public List<Status> getLicniStatusList() {
+        return hibernate.createCriteria(Licnistatus.class).list();
+    }
 }
   
 
