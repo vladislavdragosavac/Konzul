@@ -1,7 +1,7 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
 
 <head>
-<title>${pagetitle}</title>
+<title>${message:pagetitle}</title>
 <meta name="description" content="Vizni informacioni sistem Ministarstva spoljnih poslova Republike Srbije"></meta>
 <meta name="keywords" content="veze, vizni, vizni sistem, vizni informacioni sistem"></meta>
 <meta name="author" content="Vladislav Dragosavac"></meta>
