@@ -33,10 +33,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 public class Zahtev implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "ZahtevId")
+    @Id
     private Integer zahtevId;
     @Basic(optional = false)
     @NotNull
@@ -137,11 +138,10 @@ public class Zahtev implements Serializable {
     }
 
 
-
     public Integer getZahtevId() {
         return zahtevId;
     }
-
+    
     public void setZahtevId(Integer zahtevId) {
         this.zahtevId = zahtevId;
     }

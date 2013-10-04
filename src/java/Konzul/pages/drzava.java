@@ -79,7 +79,7 @@ public class drzava {
      * @return
      */
     public Zone onActionFromDrz(String naziv) {
-        Drzava drz = (Drzava) hibernate.createCriteria(Drzava.class).add(Restrictions.eq("DrzavaNaziv", naziv)).list().get(0);
+        Drzava drz = (Drzava) hibernate.createCriteria(Drzava.class).add(Restrictions.eq("naziv", naziv)).list().get(0);
         drzava = new Drzava();
         drzava.setDrzavaNaziv(drz.getDrzavaNaziv());
         drzava.setDrzavaId(drz.getDrzavaId());

@@ -3,6 +3,7 @@
 
         <t:pagelink t:page="index" class="pagelink">Početna</t:pagelink>
         <t:pagelink t:page="zahtevDrzavljanstvo" class="pagelink">Zahtev za državljanstvo</t:pagelink>
+        <t:pagelink t:page="zahtevDrzavljanstvo" class="pagelink">Izmena zahteva</t:pagelink>
   
         </div>
 </nav>

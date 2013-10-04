@@ -29,6 +29,9 @@
                     <t:parameter name="deleteCell">
                         <t:actionlink t:id="delete" context="drzavaGrid.drzavaNaziv">${message:delete}</t:actionlink>
                     </t:parameter>
+                    <t:parameter name="empty">
+                        <p>Lista je prazna</p>
+                    </t:parameter>
                 </t:grid>
                 </t:form>
                 </t:zone></p>

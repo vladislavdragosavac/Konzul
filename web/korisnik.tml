@@ -33,6 +33,11 @@
                     <t:parameter name="deleteCell">
                         <t:actionlink t:id="delete" context="korisnikGrid.korisnikPristupnoIme">${message:delete}</t:actionlink>
                     </t:parameter>
+
+                    <t:parameter name="empty">
+                        <p>Lista korisnika je prazna</p>
+                    </t:parameter>
+
                 </t:grid>
                 </t:form>
                 </t:zone></p>

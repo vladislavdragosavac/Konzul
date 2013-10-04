@@ -14,7 +14,7 @@ import org.hibernate.Session;
  *
  * @author Mama
  */
-public class Navigation {
+public class Navkonzul {
     @Inject
     private Session hibernate;
     @ApplicationState

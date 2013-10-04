@@ -48,7 +48,7 @@
                     <t:Navadmin></t:Navadmin>
                     <t:parameter t:name="else">
                         <t:if t:test="konzul">
-                            <t:Navigation></t:Navigation>
+                            <t:Navkonzul></t:Navkonzul>
                             <t:parameter t:name="else">
                                 <t:Navigation></t:Navigation>
                     

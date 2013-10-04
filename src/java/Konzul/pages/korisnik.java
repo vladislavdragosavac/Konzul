@@ -22,7 +22,7 @@ import org.hibernate.criterion.Restrictions;
 /**
  * @author Vladislav Dragosavac
  */
-@ProtectedPage(getRole=TipKorisnika.ADMIN)
+
 public class korisnik {
     @Persist
     @Property
@@ -98,5 +98,11 @@ public class korisnik {
         return forma;
     }
 
-
+    @CommitAfter
+    public Zone onActionFromDelete(String username) {
+        Korisnik kor = (Korisnik) hibernate.createCriteria(Korisnik.class).add(Restrictions.eq("korisnikPristupnoIme", username)).list().get(0);
+        hibernate.delete(kor);
+        return lista;
+    }
+    
 }

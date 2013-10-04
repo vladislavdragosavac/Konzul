@@ -3,6 +3,7 @@
 
         <t:pagelink t:page="index" class="pagelink">Home</t:pagelink>
         <t:pagelink t:page="zahtevDrzavljanstvo" class="pagelink">Citizenship request</t:pagelink>
+        <t:pagelink t:page="zahtevDrzavljanstvo" class="pagelink">Change request</t:pagelink>
   
         </div>
 </nav>

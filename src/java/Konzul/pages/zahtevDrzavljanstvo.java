@@ -30,6 +30,7 @@ import java.util.Set;
 
 import org.apache.tapestry5.annotations.ApplicationState;
 import org.apache.tapestry5.annotations.InjectComponent;
+import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.Zone;
@@ -77,6 +78,7 @@ public class zahtevDrzavljanstvo {
     @InjectComponent
     private Zone formZone;
 
+
     /**
      * metoda onActionFromzahtev snima zahtev i daje informaciju o broju zahteva
      * @return formZone
@@ -84,7 +86,7 @@ public class zahtevDrzavljanstvo {
     @CommitAfter
     public Object onActionFromZahtev() {
         Zahtev zah = new Zahtev();
- 
+         if (zahtev.getZahtevId() == null) {
             zah.setZahtevDatum(zahtev.getZahtevDatum());
             zah.setZahtevIme(zahtev.getZahtevIme());
             zah.setZahtevImeMajke(zahtev.getZahtevImeMajke());
@@ -126,6 +128,34 @@ public class zahtevDrzavljanstvo {
      
             hibernate.save(zah);
 
+            } else {
+                zah = (Zahtev) hibernate.createCriteria(Zahtev.class).add(Restrictions.eq("zahtevId", zahtev.getZahtevId())).list().get(0);
+ 
+                zah.setZahtevDatum(zahtev.getZahtevDatum());
+                zah.setZahtevIme(zahtev.getZahtevIme());
+                zah.setZahtevImeMajke(zahtev.getZahtevImeMajke());
+                zah.setZahtevImeOca(zahtev.getZahtevImeOca());
+                zah.setZahtevPrezime(zahtev.getZahtevPrezime());
+                zah.setZahtevBracniDrug(zahtev.getZahtevBracniDrug());
+                zah.setZahtevDatumRodjenja(zahtev.getZahtevDatumRodjenja());
+                zah.setZahtevDevojackoPrezimeMajke(zahtev.getZahtevDevojackoPrezimeMajke());
+                zah.setZahtevDrzavaIseljenjaId(zahtev.getZahtevDrzavaIseljenjaId());
+                zah.setZahtevDrzavaRodjenjaId(zahtev.getZahtevDrzavaRodjenjaId());
+                zah.setZahtevLicniStatusId(zahtev.getZahtevLicniStatusId());
+                zah.setZahtevMaterijalnoStanje(zahtev.getZahtevMaterijalnoStanje());
+                zah.setZahtevMestoNastanjenja(zahtev.getZahtevMestoNastanjenja());
+                zah.setZahtevMestoRodjenja(zahtev.getZahtevMestoRodjenja());
+                zah.setZahtevOsudjivan(zahtev.getZahtevOsudjivan());
+                zah.setZahtevSkolskaSprema(zahtev.getZahtevSkolskaSprema());
+                zah.setZahtevStaraoc(zahtev.getZahtevStaraoc());
+                zah.setZahtevStatusId(zahtev.getZahtevStatusId());
+                zah.setZahtevStranoDrzavljanstvoId(zahtev.getZahtevStranoDrzavljanstvoId());
+                zah.setZahtevVO(zahtev.getZahtevVO());
+                zah.setZahtevZanimanje(zahtev.getZahtevZanimanje());
+                zah.setZahtevZaposlenje(zahtev.getZahtevZaposlenje());
+            
+                hibernate.update(zah);
+            }
         zahtev = new Zahtev();
         info= "Postovani, " +zah.getZahtevPrezime() + ", podneli ste zahtev pod brojem: "+zah.getZahtevId()+", uz ovaj broj i vaše prezime u svakom trenutku možete proveriti status vaseg zahteva u postupku obrade.";
         zah=new Zahtev();
@@ -150,6 +180,36 @@ public class zahtevDrzavljanstvo {
     }
     public List<Status> getLicniStatusList() {
         return hibernate.createCriteria(Licnistatus.class).list();
+    }
+    
+        public Object set(Zahtev zaht) {
+
+            zahtev = new Zahtev();
+            zahtev.setZahtevId(zaht.getZahtevId());
+            zahtev.setZahtevDatum(zaht.getZahtevDatum());
+            zahtev.setZahtevIme(zaht.getZahtevIme());
+            zahtev.setZahtevImeMajke(zaht.getZahtevImeMajke());
+            zahtev.setZahtevImeOca(zaht.getZahtevImeOca());
+            zahtev.setZahtevPrezime(zaht.getZahtevPrezime());
+            zahtev.setZahtevBracniDrug(zaht.getZahtevBracniDrug());
+            zahtev.setZahtevDatumRodjenja(zaht.getZahtevDatumRodjenja());
+            zahtev.setZahtevDevojackoPrezimeMajke(zaht.getZahtevDevojackoPrezimeMajke());
+            zahtev.setZahtevDrzavaIseljenjaId(zaht.getZahtevDrzavaIseljenjaId());
+            zahtev.setZahtevDrzavaRodjenjaId(zaht.getZahtevDrzavaRodjenjaId());
+            zahtev.setZahtevLicniStatusId(zaht.getZahtevLicniStatusId());
+            zahtev.setZahtevMaterijalnoStanje(zaht.getZahtevMaterijalnoStanje());
+            zahtev.setZahtevMestoNastanjenja(zaht.getZahtevMestoNastanjenja());
+            zahtev.setZahtevMestoRodjenja(zaht.getZahtevMestoRodjenja());
+            zahtev.setZahtevOsudjivan(zaht.getZahtevOsudjivan());
+            zahtev.setZahtevSkolskaSprema(zaht.getZahtevSkolskaSprema());
+            zahtev.setZahtevStaraoc(zaht.getZahtevStaraoc());
+            zahtev.setZahtevStatusId(zaht.getZahtevStatusId());
+            zahtev.setZahtevStranoDrzavljanstvoId(zaht.getZahtevStranoDrzavljanstvoId());
+            zahtev.setZahtevVO(zaht.getZahtevVO());
+            zahtev.setZahtevZanimanje(zaht.getZahtevZanimanje());
+            zahtev.setZahtevZaposlenje(zaht.getZahtevZaposlenje());
+
+            return forma;
     }
 }
   

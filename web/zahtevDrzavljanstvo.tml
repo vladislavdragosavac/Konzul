@@ -13,18 +13,47 @@
                 <div class="srednjaForma">
               
                 <t:beaneditform t:id="zahtev"  zone="formZone" submitlabel="message:create" add="drzavaRodjenja,drzavaIseljenja,stranoDrzavljanstvo,status,licnistatus" exclude="zahtevId">
+                    
+                    <t:parameter name="zahtevVO">
+                        <t:label for="zahtevVO"/>
+                        <t:textarea t:id="zahtevVO" t:value="zahtev.zahtevVO" size="80"/>
+                    </t:parameter> 
+
+                    <t:parameter name="zahtevZaposlenje">
+                        <t:label for="zahtevZaposlenje"/>
+                        <t:textarea t:id="zahtevZaposlenje" t:value="zahtev.zahtevZaposlenje" size="80"/>
+                    </t:parameter> 
+
+                    <t:parameter name="zahtevMaterijalnoStanje">
+                        <t:label for="zahtevMaterijalnoStanje"/>
+                        <t:textarea t:id="zahtevMaterijalnoStanje" t:value="zahtev.zahtevMaterijalnoStanje" size="80"/>
+                    </t:parameter> 
+
+                    <t:parameter name="zahtevBracniDrug">
+                        <t:label for="zahtevBracniDrug"/>
+                        <t:textarea t:id="zahtevBracniDrug" t:value="zahtev.zahtevBracniDrug" size="40"/>
+                    </t:parameter> 
+
+                    <t:parameter name="zahtevOsudjivan">
+                        <t:label for="zahtevOsudjivan"/>
+                        <t:textarea t:id="zahtevOsudjivan" t:value="zahtev.zahtevOsudjivan" size="80"/>
+                    </t:parameter> 
+
                     <t:parameter name="drzavaRodjenja">
                         <t:label for="drzavaRodjenja"/>
                         <t:selectObject t:id="drzavaRodjenja" list="drzavaList" value="zahtev.zahtevDrzavaRodjenjaId" blankOption="never" labelField="literal:drzavaNaziv"/>
                     </t:parameter>
+
                     <t:parameter name="drzavaIseljenja">
                         <t:label for="drzavaIseljenja"/>
                         <t:selectObject t:id="drzavaIseljenja" list="drzavaList" value="zahtev.zahtevDrzavaIseljenjaId" blankOption="never" labelField="literal:drzavaNaziv"/>
                     </t:parameter>
+
                     <t:parameter name="stranoDrzavljanstvo">
                         <t:label for="stranoDrzavljanstvo"/>
                         <t:selectObject t:id="stranoDrzavljanstvo" list="drzavaList" value="zahtev.zahtevStranoDrzavljanstvoId" blankOption="never" labelField="literal:drzavaNaziv"/>
                     </t:parameter>
+
                     <t:parameter name="status">
                         <t:label for="status"/>
                         <t:selectObject t:id="status" list="statusList" value="zahtev.zahtevStatusId" blankOption="never" labelField="literal:statusOpis"/>
@@ -33,6 +62,7 @@
                         <t:label for="licnistatus"/>
                         <t:selectObject t:id="licnistatus" list="licniStatusList" value="zahtev.zahtevLicniStatusId" blankOption="never" labelField="literal:licniStatusOpis"/>
                     </t:parameter>
+
                 </t:beaneditform>
  
                 </div>
