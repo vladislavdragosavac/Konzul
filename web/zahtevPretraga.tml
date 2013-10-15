@@ -1,0 +1,24 @@
+<t:layout t:pageTitle="${message:title}"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+        <aside id="desnastrana">
+           <div class="left">
+
+            	<h1>${message:naslov}</h1>
+                <h2>${message:podnaslov1}</h2>
+
+                <h3><t:zone t:id="forma">
+               <div class="srednjaForma">
+                <t:beaneditform t:id="zahtev" exclude="zahtevDatum,zahtevIme, zahtevPrezime, zahtevDatumZahteva,zahtevImeOca,zahtevImeMajke,zahtevDevojackoPrezimeMajke,zahtevDrzavaRodjenja,zahtevMestoRodjenja,zahtevZanimanje,zahtevSkolskaSprema,zahtevMestoNastanjenja,zahtevVO,zahtevZaposlenje,zahtevMaterijalnoStanje,zahtevBracniDrug,zahtevOsudjivan,zahtevStaraoc" submitlabel="message:create">
+
+
+                </t:beaneditform>
+                </div>
+                </t:zone><br/></h3>
+
+
+          </div>
+      </aside>
+
+</t:layout>
+

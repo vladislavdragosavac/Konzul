@@ -3,7 +3,7 @@
 
         <t:pagelink t:page="index" class="pagelink">Početna</t:pagelink>
         <t:pagelink t:page="drzava" class="pagelink">Države</t:pagelink>
-        <t:pagelink t:page="korisnik" class="pagelink">Korisnici</t:pagelink>
-         <t:pagelink t:page="zahtevLista" class="pagelink">Lista zahteva</t:pagelink>
+        <t:pagelink t:page="korisnik" class="pagelink">Korisnici</t:pagelink> 
+
         </div>
 </nav>

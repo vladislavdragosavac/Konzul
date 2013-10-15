@@ -27,7 +27,7 @@ import Konzul.services.ProtectedPage;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
+import javax.swing.*;
 import org.apache.tapestry5.annotations.ApplicationState;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.InjectPage;
@@ -159,8 +159,10 @@ public class zahtevDrzavljanstvo {
         zahtev = new Zahtev();
         info= "Postovani, " +zah.getZahtevPrezime() + ", podneli ste zahtev pod brojem: "+zah.getZahtevId()+", uz ovaj broj i vaše prezime u svakom trenutku možete proveriti status vaseg zahteva u postupku obrade.";
         zah=new Zahtev();
-        
+     //   JOptionPane.showMessageDialog(null, info, "InfoBox: " , JOptionPane.INFORMATION_MESSAGE);
+
         return formZone;
+
     }
  
     /**

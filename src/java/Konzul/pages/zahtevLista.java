@@ -23,10 +23,10 @@ public class zahtevLista {
 
     @Property
     @Persist
-    private zahtevLista zahtevGrid;
+    private Zahtev zahtevGrid;
     @Property
     @Persist
-    private zahtevLista zah;
+    private Zahtev zah;
     @Inject
     private Session hibernate;
     @InjectComponent
@@ -39,8 +39,13 @@ public class zahtevLista {
     private boolean asoZahtevExists;
     @InjectPage
     private zahtevDrzavljanstvo zahtevDrzavljanstvo;
-
-
+    @Property
+    @Persist
+    private String info;
+    @InjectComponent
+    private Zone formZone;
+    @InjectPage
+    private zahtevDrzavljanstvo pageZahtevDrzavljanstvo;
 
     public List<Zahtev> getZahtevi() {
         return hibernate.createCriteria(Zahtev.class).list();
@@ -60,5 +65,10 @@ public class zahtevLista {
         hibernate.delete(zah);
         return lista;
     }
-    
+    @CommitAfter
+    public Object onActionFromView(Integer id) {
+                    Zahtev zah = (Zahtev) hibernate.createCriteria(Zahtev.class).add(Restrictions.eq("zahtevId", id)).list().get(0);
+		pageZahtevDrzavljanstvo.set(zah);
+	return pageZahtevDrzavljanstvo;
+    }
 }

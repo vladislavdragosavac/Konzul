@@ -11,13 +11,10 @@
 
                 <p><t:zone t:id="lista">
                 <t:form>
-                <t:grid source="zahtevi" row="zahtevGrid" exclude="zahtevIme,zahtevPrezime,zahtevDatumRodjenja,zahtevMestoRodjenja" add="zahtevId,delete" rowsPerPage="20">
-                    <t:parameter name="zahtevIdCell">
-                        <t:actionlink t:id="zah" context="zahtevGrid.zahtevId">${zahtevGrid.zahtevId}</t:actionlink>
-                    </t:parameter>
+                <t:grid source="zahtevi" row="zahtevGrid" exclude="zahtevImeOca,zahtevImeMajke,zahtevDevojackoPrezimeMajke,zahtevDrzavaRodjenja,zahtevMestoRodjenja,zahtevZanimanje,zahtevSkolskaSprema,zahtevMestoNastanjenja,zahtevVO,zahtevZaposlenje,zahtevMaterijalnoStanje,zahtevBracniDrug,zahtevOsudjivan,zahtevStaraoc" add="view,delete" rowsPerPage="20">
 
-                    <t:parameter name="deleteCell">
-                        <t:actionlink t:id="delete" context="zahtevGrid.zahtevId">${message:delete}</t:actionlink>
+                    <t:parameter name="viewCell">
+                        <t:actionlink t:id="view" context="zahtevGrid.zahtevId">${message:view}</t:actionlink>
                     </t:parameter>
 
                     <t:parameter name="empty">
@@ -31,5 +28,9 @@
           </div>
       </aside>
 
+		<t:zone t:id="formZone" id="formZone">
+                      <h1>${info}</h1>
+
+	 	</t:zone>
 </t:layout>
 
